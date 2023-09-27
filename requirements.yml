@@ -1,0 +1,28 @@
+# from galaxy
+collections:
+  - name: community.general
+  - name: community.docker
+  - name: community.kubernetes
+  - name: community.hashi_vault
+  - name: community.crypto
+  - name: kubernetes.core
+  - name: ansible.utils
+  - name: ansible.posix
+  - name: ansible.netcommon
+  - name: ansible.windows
+  - name: juniper.device
+  - name: cisco.ios
+  - name: arista.eos
+  - name: awx.awx
+  - name: nutanix.ncp
+  - name: servicenow.servicenow
+
+# How to version pin:
+# collections:
+#   - name: namespace.name
+#     version: 1.0.0
+#     type: galaxy
+#     signatures:
+#       - https://examplehost.com/detached_signature.asc
+#       - file:///path/to/local/detached_signature.asc
+
