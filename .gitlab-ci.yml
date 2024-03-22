@@ -16,9 +16,10 @@ build:
     # if branch is main push to main latest
     - if [ "$CI_COMMIT_REF_NAME" = "main" ]; then docker tag ${CI_APPLICATION_REPOSITORY}:${CI_APPLICATION_TAG} ${CI_REGISTRY_IMAGE}:latest ; docker push ${CI_REGISTRY_IMAGE}:latest ; fi
 
-    # login to dockerhub and tag the image
+    # if branch is main push to dockerhub and create an extra timestamped tag
     - docker login -u ${DOCKERHUB_USER} -p ${DOCKERHUB_PASS}
+    - export DATE_NOW=$(date +%s)
     - docker tag ${CI_APPLICATION_REPOSITORY}:${CI_APPLICATION_TAG} aapjeisbaas/semaphore:latest
-
-    # if branch is main push to dockerhub
+    - docker tag ${CI_APPLICATION_REPOSITORY}:${CI_APPLICATION_TAG} aapjeisbaas/semaphore:${DATE_NOW}
     - if [ "$CI_COMMIT_REF_NAME" = "main" ]; then docker push aapjeisbaas/semaphore:latest ; fi
+    - if [ "$CI_COMMIT_REF_NAME" = "main" ]; then docker push aapjeisbaas/semaphore:${DATE_NOW} ; fi
