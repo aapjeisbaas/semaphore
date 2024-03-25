@@ -16,6 +16,7 @@ collections:
   - name: awx.awx
   - name: nutanix.ncp
   - name: servicenow.servicenow
+  - name: netbox.netbox
 
 # How to version pin:
 # collections:
