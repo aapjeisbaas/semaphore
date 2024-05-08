@@ -17,6 +17,8 @@ collections:
   - name: nutanix.ncp
   - name: servicenow.servicenow
   - name: netbox.netbox
+roles:
+  - name: roles-ansible.restic
 
 # How to version pin:
 # collections:
