@@ -1,6 +1,6 @@
 FROM semaphoreui/semaphore:latest
 USER root
-RUN apk add bash build-base python3-dev krb5-dev libssh-dev libssh2-dev oniguruma-dev
+RUN apk add bash build-base python3-dev krb5-dev libssh-dev libssh2-dev oniguruma-dev aws-cli
 COPY requirements.txt .
 COPY requirements.yml .
 RUN apk add py3-pip git vim ; pip3 install -r requirements.txt ; \
