@@ -8,5 +8,5 @@ RUN pip3 install -r requirements.txt ; \
     ansible-galaxy role install -r requirements.yml -p /usr/share/ansible/roles
 COPY pip-installer.sh .
 RUN ./pip-installer.sh
-RUN pip3 install 'urllib3<2'
+RUN pip3 install 'urllib3<2' firewall
 #USER semaphore
