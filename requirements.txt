@@ -2,3 +2,4 @@ pexpect
 ptyprocess
 pipupgrade
 ansible-dev-tools
+urllib3<2
