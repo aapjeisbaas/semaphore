@@ -2,13 +2,13 @@ FROM semaphoreui/semaphore:latest
 USER root
 ENV VERIFY_CHECKSUM=false
 # Install kubectl, helm and oc
-RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl" ;\
-    chmod +x ./kubectl ;\
-    mv ./kubectl /usr/local/bin/kubectl ;\
-    curl "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable/openshift-client-linux-amd64-rhel9-4.16.2.tar.gz" -o "openshift-client-linux.tgz" ;\
-    tar -xvf ./openshift-client-linux.tgz ;\
+
+RUN curl -fsSL -o openshift-client-linux.tar.gz "https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable/openshift-client-linux-amd64-rhel9-4.16.2.tar.gz" ;\
+    tar -xvzf openshift-client-linux.tar.gz ;\
     chmod +x ./oc ;\
     mv ./oc /usr/local/bin/oc ;\
+    chmod +x ./kubectl ;\
+    mv ./kubectl /usr/local/bin/kubectl ;\
     rm ./openshift-client-linux.tgz ;\
     curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 ;\
     chmod 700 get_helm.sh ;\
