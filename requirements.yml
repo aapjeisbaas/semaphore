@@ -17,6 +17,7 @@ collections:
   - name: nutanix.ncp
   - name: servicenow.servicenow
   - name: netbox.netbox
+  - name: amazon.aws
 roles:
   - name: roles-ansible.restic
 
