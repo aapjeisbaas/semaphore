@@ -3,3 +3,5 @@ ptyprocess
 pipupgrade
 ansible-dev-tools
 urllib3<2
+pypsrp<=1.0.0
+pywinrm>=0.4.0
